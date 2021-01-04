@@ -5,7 +5,7 @@ import javax.persistence.Entity;
 import javax.persistence.EnumType;
 import javax.persistence.Enumerated;
 
-import in.ecommerce.order.util.ShippingMethode;
+import in.ecommerce.order.util.ShippingMethod;
 
 @Entity
 public class Shipping extends AbstractBaseEntity {
@@ -32,7 +32,7 @@ public class Shipping extends AbstractBaseEntity {
 
     @Column
     @Enumerated(EnumType.STRING)
-    private ShippingMethode shippingMethod;
+    private ShippingMethod shippingMethod;
 
     public String getShippingAddressline1() {
         return shippingAddressline1;
@@ -74,11 +74,11 @@ public class Shipping extends AbstractBaseEntity {
         this.shippingZip = shippingZip;
     }
 
-    public ShippingMethode getShippingMethod() {
+    public ShippingMethod getShippingMethod() {
         return shippingMethod;
     }
 
-    public void setShippingMethod(ShippingMethode shippingMethod) {
+    public void setShippingMethod(ShippingMethod shippingMethod) {
         this.shippingMethod = shippingMethod;
     }
 

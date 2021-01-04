@@ -20,7 +20,7 @@ import in.ecommerce.order.entitymodels.Order;
 import in.ecommerce.order.entitymodels.Payment;
 import in.ecommerce.order.entitymodels.Shipping;
 import in.ecommerce.order.repositories.BillingRepository;
-import in.ecommerce.order.repositories.CostomerRepository;
+import in.ecommerce.order.repositories.CustomerRepository;
 import in.ecommerce.order.repositories.ItemRepository;
 import in.ecommerce.order.repositories.OrderRepository;
 import in.ecommerce.order.repositories.PaymentRepository;
@@ -50,7 +50,7 @@ public class OrdersServiceImpl implements OrderService {
     private ShippingRepository shippingRepository;
 
     @Autowired
-    private CostomerRepository costomerRepository;
+    private CustomerRepository CustomerRepository;
 
     @Override
     public Order createOrder(Order order) {
@@ -76,7 +76,7 @@ public class OrdersServiceImpl implements OrderService {
 
             // we need to check if customer is already in our db
             Customer customer = order.getCustomer();
-            Optional<Customer> OptCustomer = this.costomerRepository.findById(customer.getId());
+            Optional<Customer> OptCustomer = this.CustomerRepository.findById(customer.getId());
 
             if (OptCustomer.isPresent()) {
                 customer = new Customer();

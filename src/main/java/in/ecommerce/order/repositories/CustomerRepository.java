@@ -6,6 +6,6 @@ import org.springframework.stereotype.Repository;
 import in.ecommerce.order.entitymodels.Customer;
 
 @Repository
-public interface CostomerRepository extends PagingAndSortingRepository<Customer, String> {
+public interface CustomerRepository extends PagingAndSortingRepository<Customer, String> {
 
 }

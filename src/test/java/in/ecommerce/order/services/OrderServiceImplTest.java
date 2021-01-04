@@ -25,7 +25,7 @@ import in.ecommerce.order.entitymodels.Order;
 import in.ecommerce.order.entitymodels.Payment;
 import in.ecommerce.order.entitymodels.Shipping;
 import in.ecommerce.order.repositories.BillingRepository;
-import in.ecommerce.order.repositories.CostomerRepository;
+import in.ecommerce.order.repositories.CustomerRepository;
 import in.ecommerce.order.repositories.ItemRepository;
 import in.ecommerce.order.repositories.OrderRepository;
 import in.ecommerce.order.repositories.PaymentRepository;
@@ -48,7 +48,7 @@ public class OrderServiceImplTest {
     private ShippingRepository shippingRepository;
 
     @Mock
-    private CostomerRepository costomerRepository;
+    private CustomerRepository CustomerRepository;
 
     @Mock
     private ItemRepository itemRepository;
@@ -141,7 +141,7 @@ public class OrderServiceImplTest {
         when(paymentRepository.save(payment)).thenReturn(payment);
         when(itemRepository.findById(item.getId())).thenReturn(Optional.of(item));
         when(itemRepository.findById(item2.getId())).thenReturn(Optional.of(item2));
-        when(costomerRepository.findById(customer.getId())).thenReturn(Optional.of(customer));
+        when(CustomerRepository.findById(customer.getId())).thenReturn(Optional.of(customer));
 
         Order orderRes = orderService.createOrder(order);
 
@@ -185,7 +185,7 @@ public class OrderServiceImplTest {
         when(paymentRepository.save(payment2)).thenReturn(payment2);
         when(itemRepository.findById(item.getId())).thenReturn(Optional.of(item));
         when(itemRepository.findById(item2.getId())).thenReturn(Optional.of(item2));
-        when(costomerRepository.findById(customer.getId())).thenReturn(Optional.of(customer));
+        when(CustomerRepository.findById(customer.getId())).thenReturn(Optional.of(customer));
 
         Order orderRes = orderService.createOrder(order2payment);
 
