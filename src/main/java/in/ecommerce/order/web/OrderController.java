@@ -1,5 +1,6 @@
 package in.ecommerce.order.web;
 
+import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,13 +22,17 @@ public class OrderController {
 
     @PostMapping("orders")
     public Order createOrder(@RequestBody Order orderModel) {
-
         return this.orderService.createOrder(orderModel);
     }
 
     @GetMapping(path = "orders/{id}")
     public Order getOrder(@PathVariable String id) {
         return orderService.getOrder(id);
+    }
+
+    @GetMapping(path="orders")
+    public List<Order> getAllOrders(){
+        return orderService.getAllOrders();
     }
 
     @DeleteMapping("orders/{id}")

@@ -145,6 +145,11 @@ public class OrdersServiceImpl implements OrderService {
     }
 
     @Override
+    public List<Order> getAllOrders() {
+        return this.orderRepository.findAll();
+    }
+
+    @Override
     public void cancelOrder(String id) {
 
         this.orderRepository.deleteById(id);
